@@ -1,0 +1,11 @@
+<div class="container">
+<h1 class="mt-5 text-success">Product Cart List:-</h1>
+<ul>
+    <li *ngFor="let product of addtocartdata ;let i=index" class="text-secondary">
+        <h1>Item Number:-{{i+1}}</h1>
+        <h3>Product Name: {{ product.productName }}</h3>
+        <h5>Price: {{ product.price| currency:'INR' }}</h5><br>
+        
+    </li>
+</ul>
+</div>

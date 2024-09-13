@@ -1,0 +1,31 @@
+<div class="container">
+
+    
+<form (ngSubmit)="onSubmit()">
+        <h1 class="mt-3 text-success mb-4">Add Product</h1>
+        <div class="col-4">
+            <input type="text" placeholder="Enter Product Name" [(ngModel)]="productname" name="productname"
+                class="form-control mt-2"><br>
+            <input type="text" placeholder="Enter Product Price" [(ngModel)]="productprice" name="productprice"
+                class="form-control"><br>
+            <button class="btn btn-primary btn-sm" type="submit" >Add To Product</button>
+        </div>
+    </form>
+
+
+    <div *ngIf="Item">
+        <h1 class="mt-5 text-success">Product List</h1>
+        <ul>
+            <li *ngFor="let product of productdata ;let i=index" class="text-secondary">
+                <h1>Item Number:-{{i+1}}</h1>
+                <h3>Product Name: {{ product.productName }}</h3>
+                <h5>Price:{{ product.price | currency:'INR'}}</h5><br>
+                <button class="btn btn-success" (click)="addtocart(product)">Add To Cart</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="">
+    <h3 class="text-warning mt-4 mb-4">Add Ammount</h3>
+  </div>
+  <mat-card class="shadow p-4 mt-4 mb-4">
+    <form
+      [formGroup]="customerForm"
+      (ngSubmit)="customeradded(customerForm.value)"
+    >
+      <label for="accountnumber" class="form-label mt-4">
+        <h5 class="text-warning">Account Number:</h5>
+      </label>
+      <input
+        type="text"
+        name="accountnumber"
+        id="accountnumber"
+        class="form-control"
+        placeholder="Enter Account Number"
+        formControlName="customerAccountNumber"
+      />
+      <div
+        class="text-danger mt-2"
+        *ngIf="
+          customerForm.get('customerAccountNumber')?.touched &&
+          !customerForm.get('customerAccountNumber')?.valid
+        "
+      >
+        Please Enter Valid Account Number
+      </div>
+
+      <label for="accountbalance" class="form-label mt-4">
+        <h5 class="text-warning">Enter Ammount:</h5>
+      </label>
+      <input
+        type="text"
+        name="accountbalance"
+        id="accountbalance"
+        class="form-control"
+        placeholder="Enter Ammount"
+         formControlName="AccontBalance2" 
+        [(ngModel)]="num2"
+      />
+
+      <input
+        type="text"
+        name="accountbalance"
+        class="form-control hide"
+        placeholder="Enter Ammount"
+        formControlName="AccontBalance"
+        [(ngModel)]="num1"
+      />
+
+      <div
+        class="text-danger mt-2"
+        *ngIf="
+          customerForm.get('AccontBalance2')?.touched &&
+          !customerForm.get('AccontBalance2')?.valid
+        "
+      >
+        Please Enter Valid Ammount
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-sm mt-4 float-right"
+        [disabled]="!customerForm.valid"
+      >
+        Customer Update..
+      </button>
+    </form>
+  </mat-card>
+</div>

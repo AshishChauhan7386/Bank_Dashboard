@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="float-left">
+            <span class="navbar-brand mb-0 h1 text-success">E-Commerce Website</span>
+        </div>
+
+        <div class="float-right">
+            <a routerLink="">Add product</a>
+         
+            <a routerLink="viewbilldetails">View Bill Details</a>
+            <button type="button" class="btn btn-success position-relative  mr-4 mt-1 btn-sm" routerLink="cartdetails">
+                View Cart List
+                <span  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                    {{indexarray}}
+                       <span class="visually-hidden">unread messages</span>
+                   </span>
+            </button>
+        </div>
+    </div>
+</nav>

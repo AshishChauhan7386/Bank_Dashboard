@@ -1,0 +1,17 @@
+<div class="container">
+    <h1 class="mt-5 text-success">Product Bill Details</h1>
+    <h2 class="mt-5 text-success">Total Payement Amount:{{total |currency:'INR'}}</h2>
+    <br>
+    <ul>
+        <li *ngFor="let product of addtocartdata ;let i=index" class="text-secondary">
+
+
+
+
+            <h1>Item Number:-{{i+1}}</h1>
+            <h3>Product Name: {{ product.productName }}</h3>
+            <h5>Price: {{ product.price | currency:'INR'}}</h5><br>
+<button class="btn btn-danger" (click)="deleteitem(product)">delete</button>
+        </li>
+    </ul>
+</div>

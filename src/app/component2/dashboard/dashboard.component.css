@@ -1,0 +1,22 @@
+.card {
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    max-width: 48%;
+    
+    
+    
+  }
+  .main-container{
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+  .card:hover {
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+  }
+ .maincardcontent{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+ }

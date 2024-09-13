@@ -1,0 +1,12 @@
+.center{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+    margin-bottom: 20px;
+}
+.green-text {
+    color: rgb(0, 216, 0);
+  }
+  .red-text{
+    color: red;
+  }

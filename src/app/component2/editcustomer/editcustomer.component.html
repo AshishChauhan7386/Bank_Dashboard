@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="">
+    <h3 class="text-warning mt-4 mb-4" >Edit User</h3>
+  </div>
+  <mat-card class="shadow p-4 mt-4 mb-4">
+    <form
+      [formGroup]="customerForm"
+      (ngSubmit)="customeradded(customerForm.value)"
+    >
+      <label for="" class="form-label mt-4">
+        <h5 class="text-warning">Customer Name:</h5>
+      </label>
+      <input
+        type="text"
+        name="customername"
+        class="form-control"
+        placeholder="Enter Customer Name"
+        formControlName="customerName"
+       
+      />
+      <div
+        class="text-danger mt-2"
+        *ngIf="
+          customerForm.get('customerName')?.touched &&
+          !customerForm.get('customerName')?.valid
+        "
+      >
+        Please Enter Name Min 3 Words
+      </div>
+      <label for="" class="form-label mt-4">
+        <h5 class="text-warning">Customer Address:</h5>
+      </label>
+      <input
+        type="text"
+        name="customeraddress"
+        class="form-control"
+        placeholder="Enter Customer Address"
+        formControlName="customerAddress"
+      
+      />
+      <div
+        class="text-danger mt-2"
+        *ngIf="
+          customerForm.get('customerAddress')?.touched &&
+          !customerForm.get('customerAddress')?.valid
+        "
+      >
+        Please Enter Address
+      </div>
+
+      <label for="" class="form-label mt-4">
+        <h5 class="text-warning">Customer Mobile Number:</h5>
+      </label>
+      <input
+        type="text"
+        name="customermobilenumber"
+        class="form-control"
+        placeholder="Enter Mobile Number"
+        formControlName="customerMobileNumber"
+      />
+      <div
+        class="text-danger mt-2"
+        *ngIf="
+          customerForm.get('customerMobileNumber')?.touched &&
+          !customerForm.get('customerMobileNumber')?.valid
+        "
+      >
+        Please Enter 10 Digit Mobile Number
+      </div>
+
+      <label for="" class="form-label mt-4">
+        <h5 class="text-warning">Customer AadharNumber:</h5>
+      </label>
+      <input
+        type="text"
+        name="aadharnumber"
+        class="form-control"
+        placeholder="Enter Aadhar Card Number"
+        formControlName="customerAadharNumber"
+      />
+      <div
+        class="text-danger mt-2"
+        *ngIf="
+          customerForm.get('customerAadharNumber')?.touched &&
+          !customerForm.get('customerAadharNumber')?.valid
+        "
+      >
+        Please Enter 12 Digit Aadhar Number
+      </div>
+      <label for="" class="form-label mt-4">
+        <h5 class="text-warning">Customer Status:</h5>
+      </label>
+      <input
+        type="text"
+        name="customerstatus"
+        class="form-control"
+        placeholder="Enter Customer Status"
+        formControlName="Active"
+      />
+      <div
+        class="text-danger mt-2"
+        *ngIf="
+          customerForm.get('Active')?.touched &&
+          !customerForm.get('Active')?.valid
+        "
+      >
+        Please Enter Valid status
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-sm mt-4 float-right"
+        [disabled]="!customerForm.valid"
+      >
+        Customer Update..
+      </button>
+    </form>
+  </mat-card>
+</div>

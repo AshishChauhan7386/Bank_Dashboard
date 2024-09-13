@@ -1,0 +1,101 @@
+<div class="container mx-4 mb-4">
+  <div>
+    <h3 class="text-warning mt-4 mb-4">Dashboard</h3>
+  </div>
+  <div class="maincardcontent">
+
+
+
+    <mat-card class="card  mt-4">
+      <div class="main-container">
+        <div class="img p-4">
+          <img src="assets/rs.png" alt="" width="200" height="200" />
+        </div>
+        <div class="content">
+          <h5 class="text-warning">Total Amount In All Account:</h5>
+          <h4 class="text-success mt-2">{{totalBalance | currency:'INR'}}</h4>
+        </div>
+      </div>
+    </mat-card>
+
+
+
+    <mat-card class="card mt-4">
+      <div class="main-container">
+        <div class="img p-4">
+          <img src="assets/bank.jpg" alt="" width="200" height="200" />
+        </div>
+        <div class="content">
+          <h5 class="text-warning">Total Account:</h5>
+          <h4 class="text-success mt-2">{{totalaccount }}</h4>
+        </div>
+      </div>
+    </mat-card>
+
+
+
+    <mat-card class="card  mt-4">
+      <div class="main-container">
+        <div class="img p-4">
+          <img src="assets/rs.png" alt="" width="200" height="200" />
+        </div>
+        <div class="content">
+          <h5 class="text-warning">Total Amount In Active Account:</h5>
+          <h4 class="text-success mt-2">{{totalactiveaccountbalance | currency:'INR'}}</h4>
+        </div>
+      </div>
+    </mat-card>
+
+
+
+
+
+    <mat-card class="card  mt-4">
+      <div class="main-container">
+        <div class="img p-4">
+          <img src="assets/inactive-rubber-stamp-vector-12981139-removebg-preview.png" alt="" width="200"
+            height="200" />
+        </div>
+        <div class="content">
+          <h5 class="text-warning">Total Deactivate Account:</h5>
+          <h4 class="text-success mt-2">{{totaldeactivateaccount}}</h4>
+        </div>
+      </div>
+    </mat-card>
+
+
+
+
+    <mat-card class="card  mt-4">
+      <div class="main-container">
+        <div class="img p-4">
+          <img src="assets/rs.png" alt="" width="200" height="200" />
+        </div>
+        <div class="content">
+          <h5 class="text-warning">Total Amount In Deactivate Account:</h5>
+          <h4 class="text-success mt-2">{{totaldeactiveaccountbalance| currency:'INR'}}</h4>
+        </div>
+      </div>
+    </mat-card>
+
+
+
+
+
+
+
+    <mat-card class="card  mt-4">
+      <div class="main-container">
+        <div class="img p-4">
+          <img src="assets/bank.jpg" alt="" width="200" height="200" />
+        </div>
+        <div class="content">
+          <h5 class="text-warning">Total Active Account:</h5>
+          <h4 class="text-success mt-2">{{ totalActiveAccounts}}</h4>
+        </div>
+      </div>
+    </mat-card>
+
+
+  </div>
+</div>

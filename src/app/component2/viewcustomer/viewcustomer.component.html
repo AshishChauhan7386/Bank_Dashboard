@@ -1,0 +1,253 @@
+<div class="container">
+  <div class="input-group mt-2 mb-2" #data>
+    <input
+      id="searchInput"
+      (keydown)="searchdata()"
+      type="search"
+      class="form-control rounded"
+      placeholder="Search"
+      aria-label="Search"
+      aria-describedby="search-addon"
+    />
+  </div>
+
+  <div *ngIf="value12">
+    <h3 class="text-warning mt-4 mb-4">
+      Please Enter Valid Aadhar Number In Your Search Box
+    </h3>
+  </div>
+
+  <div class="search" *ngIf="tablesearch">
+    <h3 class="text-warning mt-4 mb-4">Search Result</h3>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Customer Account Number</th>
+          <th scope="col">Balance</th>
+          <th scope="col">Customer Address</th>
+          <th scope="col">Customer Mobile Number</th>
+          <th scope="col">Customer Aadhar Number</th>
+
+          <th scope="col">Customer IFSC Code</th>
+
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let filter of fiterdata">
+          <td
+            [ngClass]="{
+              'green-text': filter.Active === 'Activate',
+              'red-text': filter.Active !== 'Activate'
+            }"
+          >
+            {{ filter.customerName }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': filter.Active === 'Activate',
+              'red-text': filter.Active !== 'Activate'
+            }"
+          >
+            {{ filter.customerAccountNumber }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': filter.Active === 'Activate',
+              'red-text': filter.Active !== 'Activate'
+            }"
+          >
+            {{ filter.AccontBalance | currency : "INR" }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': filter.Active === 'Activate',
+              'red-text': filter.Active !== 'Activate'
+            }"
+          >
+            {{ filter.customerAddress }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': filter.Active === 'Activate',
+              'red-text': filter.Active !== 'Activate'
+            }"
+          >
+            {{ filter.customerMobileNumber }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': filter.Active === 'Activate',
+              'red-text': filter.Active !== 'Activate'
+            }"
+          >
+            {{ filter.customerAadharNumber }}
+          </td>
+
+          <td
+            [ngClass]="{
+              'green-text': filter.Active === 'Activate',
+              'red-text': filter.Active !== 'Activate'
+            }"
+          >
+            {{ filter.customerIFSCCode }}
+          </td>
+
+          <td>
+            <a [routerLink]="['/editcustomer', filter.id]">
+              <button
+                class="btn btn-warning btn-sm mx-2 mt-2"
+                (click)="updateDataOnServer(filter.id)"
+              >
+                Edit
+              </button>
+            </a>
+            <button
+              class="btn btn-danger btn-sm mx-2 mt-2"
+              (click)="deletecustomer(filter.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="center" *ngIf="fdata">
+      <div>
+        <img src="{{ img }}" alt="" height="300" width="300" />
+      </div>
+      <br />
+      <div>
+        <h1 class="text-warning">
+          No data Found! Please Search Another data. Last 4 Digit of Account
+          Number..
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="text-warning mt-4 mb-4">View User</h3>
+
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Customer Account Number</th>
+          <th scope="col">Balance</th>
+
+          <th scope="col">Customer Address</th>
+          <th scope="col">Customer Mobile Number</th>
+          <th scope="col">Customer Aadhar Number</th>
+
+          <th scope="col">Customer IFSC Code</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let cdata of customerlist
+              | paginate
+                : { itemsPerPage: itemsPerPage, currentPage: currentPage };
+            let i = index
+          "
+        >
+          <th
+            scope="row"
+            [ngClass]="{
+              'green-text': cdata.Active === 'Activate',
+              'red-text': cdata.Active !== 'Activate'
+            }"
+          >
+            {{ i + 1 }}
+          </th>
+          <td
+            [ngClass]="{
+              'green-text': cdata.Active === 'Activate',
+              'red-text': cdata.Active !== 'Activate'
+            }"
+          >
+            {{ cdata.customerName }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': cdata.Active === 'Activate',
+              'red-text': cdata.Active !== 'Activate'
+            }"
+          >
+            {{ cdata.customerAccountNumber }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': cdata.Active === 'Activate',
+              'red-text': cdata.Active !== 'Activate'
+            }"
+          >
+            {{ cdata.AccontBalance | currency : "INR" }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': cdata.Active === 'Activate',
+              'red-text': cdata.Active !== 'Activate'
+            }"
+          >
+            {{ cdata.customerAddress }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': cdata.Active === 'Activate',
+              'red-text': cdata.Active !== 'Activate'
+            }"
+          >
+            {{ cdata.customerMobileNumber }}
+          </td>
+          <td
+            [ngClass]="{
+              'green-text': cdata.Active === 'Activate',
+              'red-text': cdata.Active !== 'Activate'
+            }"
+          >
+            {{ cdata.customerAadharNumber }}
+          </td>
+
+          <td
+            [ngClass]="{
+              'green-text': cdata.Active === 'Activate',
+              'red-text': cdata.Active !== 'Activate'
+            }"
+          >
+            {{ cdata.customerIFSCCode }}
+          </td>
+          <td>
+            <a [routerLink]="['/editcustomer', cdata.id]">
+              <button
+                class="btn btn-warning btn-sm mx-2 mt-2"
+                (click)="updateDataOnServer(cdata.id)"
+              >
+                Edit
+              </button>
+            </a>
+            <button
+              class="btn btn-danger btn-sm mx-2 mt-2"
+              (click)="deletecustomer(cdata.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="center" *ngIf="dataempty">
+    <div>
+      <img src="{{ img2 }}" alt="" height="300" width="300" />
+    </div>
+  </div>
+</div>
+<pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>

@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="">
+    <h3 class="text-warning p-2">Customer Added</h3>
+  </div>
+  <form
+    [formGroup]="customerForm"
+    (ngSubmit)="customeradded(customerForm.value)"
+  >
+    <input
+      type="text"
+      name="customername"
+      class="form-control mt-4"
+      placeholder="Enter Customer Name"
+      formControlName="customername"
+    />
+    <div
+      class="text-danger mt-2"
+      *ngIf="
+        customerForm.get('customername')?.touched &&
+        !customerForm.get('customername')?.valid
+      "
+    >
+      Please Enter Name Min 3 Words
+    </div>
+
+    <input
+      type="text"
+      name="customeraddress"
+      class="form-control mt-3"
+      placeholder="Enter Customer Address"
+      formControlName="customeraddress"
+    />
+    <div
+      class="text-danger mt-2"
+      *ngIf="
+        customerForm.get('customeraddress')?.touched &&
+        !customerForm.get('customeraddress')?.valid
+      "
+    >
+      Please Enter Address
+    </div>
+    <input
+      type="text"
+      name="customermobilenumber"
+      class="form-control mt-3"
+      placeholder="Enter Mobile Number"
+      formControlName="customermobilenumber"
+    />
+    <div
+      class="text-danger mt-2"
+      *ngIf="
+        customerForm.get('customermobilenumber')?.touched &&
+        !customerForm.get('customermobilenumber')?.valid
+      "
+    >
+      Please Enter 10 Digit Mobile Number
+    </div>
+    <input
+      type="text"
+      name="customeraadharcardnumber"
+      class="form-control mt-3"
+      placeholder="Enter Aadhar Card Number"
+      formControlName="customeraadharcardnumber"
+    />
+    <div
+      class="text-danger mt-2"
+      *ngIf="
+        customerForm.get('customeraadharcardnumber')?.touched &&
+        !customerForm.get('customeraadharcardnumber')?.valid
+      "
+    >
+      Please Enter 12 Digit Aadhar Number
+    </div>
+
+    <input
+      type="text"
+      name="customeraccountblance"
+      class="form-control mt-3"
+      placeholder="Enter Amount"
+      formControlName="customeraccountblance"
+      [ngModel]="customerData.AccontBalance"
+    />
+    <div
+      class="text-danger mt-2"
+      *ngIf="
+        customerForm.get('customeraccountblance')?.touched &&
+        !customerForm.get('customeraccountblance')?.valid
+      "
+    >
+      Plaese Enter Valid Ammount
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary btn-sm mt-4 float-right"
+      [disabled]="!customerForm.valid"
+    >
+      Customer Added..
+    </button>
+  </form>
+</div>

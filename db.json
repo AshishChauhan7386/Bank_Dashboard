@@ -1,0 +1,89 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "AccountHolderDetails": [
+    {
+      "customerName": "Ashish Chauhan",
+      "customerAccountNumber": "39690100007689",
+      "customerIFSCCode": "BDN1BOB123",
+      "customerAddress": "Aadarsh Nagar Gali No-03 Civil Line Badaun",
+      "customerMobileNumber": "8433424837",
+      "customerAadharNumber": "876598765656",
+      "Active": "Activate",
+      "AccontBalance": 10000,
+      "id": 1,
+      "AccontBalance2": "1000"
+    },
+    {
+      "customerName": "Usha Chauhan",
+      "customerAccountNumber": "39690100003950",
+      "customerIFSCCode": "BDN1BOB123",
+      "customerAddress": "Aadarsh Nagar Civil Line Badaun",
+      "customerMobileNumber": "7688987878",
+      "customerAadharNumber": "675687954545",
+      "Active": "Activate",
+      "AccontBalance": "20000",
+      "id": 2
+    },
+    {
+      "customerName": "Sumit ",
+      "customerAccountNumber": "39690100001892",
+      "customerIFSCCode": "BDN1BOB123",
+      "customerAddress": "Badaun Uttar Pradesh",
+      "customerMobileNumber": "8976776655",
+      "customerAadharNumber": "764534812345",
+      "Active": "Activate",
+      "AccontBalance": "15501",
+      "id": 3
+    },
+    {
+      "customerName": "Ankit Chauhan",
+      "customerAccountNumber": "39690100009330",
+      "customerIFSCCode": "BDN1BOB123",
+      "customerAddress": "Badaun Aadarsh Nagar",
+      "customerMobileNumber": "9766557733",
+      "customerAadharNumber": "761230886655",
+      "Active": "Activate",
+      "AccontBalance": "21200",
+      "id": 4
+    },
+    {
+      "customerName": "Atul Chauhan",
+      "customerAccountNumber": "39690100004236",
+      "customerIFSCCode": "BDN1BOB123",
+      "customerAddress": "Gaziabaad Uttar Pradesh",
+      "customerMobileNumber": "7866567547",
+      "customerAadharNumber": "342366557654",
+      "Active": "Activate",
+      "AccontBalance": "555000",
+      "id": 5
+    },
+    {
+      "customerName": "Amit Chauhan",
+      "customerAccountNumber": "39690100008370",
+      "customerIFSCCode": "BDN1BOB123",
+      "customerAddress": "Gurgaon Haryana",
+      "customerMobileNumber": "7655883423",
+      "customerAadharNumber": "453278654387",
+      "Active": "Activate",
+      "AccontBalance": 100000,
+      "id": 6,
+      "AccontBalance2": "100"
+    }
+  ]
+}
